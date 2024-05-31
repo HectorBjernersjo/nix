@@ -29,7 +29,7 @@
       hector = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./users/hector/home.nix
+          ./user/main.nix
         ];
       };
     };
