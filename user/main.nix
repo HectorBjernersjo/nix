@@ -2,7 +2,7 @@
 
 {
 
-imports = [ ./programs/main.nix ]
+imports = [ ./programs/main.nix ];
 
 home.username = "hector";
 home.homeDirectory = "/home/hector";

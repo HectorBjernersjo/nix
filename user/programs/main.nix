@@ -1,4 +1,4 @@
 { config, pkgs, ... }:
 {
-	imports = [ ./nvim/main.nix ]
+	imports = [ ./nvim/main.nix ];
 }
