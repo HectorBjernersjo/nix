@@ -13,5 +13,6 @@
     gcc
     lua-language-server
     python3
+    fastfetch
   ];
 }

@@ -4,6 +4,7 @@
   imports = [ 
   	./hardware-configuration.nix
 	./packages.nix
+    ./darkmode.nix
 	];
 
   boot.loader.systemd-boot.enable = true;
