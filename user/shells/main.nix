@@ -1,7 +1,4 @@
 { config, pkgs, ... }:
 {
-	imports = [ 
-        ./nvim/main.nix
-        ./wofi/main.nix
-        ];
+    home.file.".bashrc".source = ./bashrc;
 }

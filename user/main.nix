@@ -5,6 +5,7 @@
 imports = [ 
     ./programs/main.nix
     ./wms/main.nix
+    ./shells/main.nix
     ];
 
 home.username = "hector";

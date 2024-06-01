@@ -37,6 +37,13 @@
     pulse.enable = true;
   };
 
+  security.sudo = {
+    enable = true;
+    extraConfig = ''
+      hector ALL=(ALL) NOPASSWD: ALL
+    '';
+  };
+
   users.users.hector = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];

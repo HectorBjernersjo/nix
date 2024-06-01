@@ -10,5 +10,8 @@
     vscode
     kitty
     wofi
+    gcc
+    lua-language-server
+    python3
   ];
 }
