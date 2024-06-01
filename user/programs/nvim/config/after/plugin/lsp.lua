@@ -32,7 +32,7 @@ require('mason').setup({})
 
 -- Mason-LSPconfig setup
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'pyright', 'html'},
+  ensure_installed = {},
   handlers = {
     lsp_zero.default_setup,
   },
@@ -65,5 +65,3 @@ lspconfig.html.setup({
 -- Setup for other language servers
 -- For example: lspconfig.tsserver.setup{ on_attach = on_attach }
 -- Repeat for other languages like rust_analyzer, pyright, etc.
-
-

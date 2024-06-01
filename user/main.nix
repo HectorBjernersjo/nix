@@ -2,7 +2,10 @@
 
 {
 
-imports = [ ./programs/main.nix ];
+imports = [ 
+    ./programs/main.nix
+    ./wms/main.nix
+    ];
 
 home.username = "hector";
 home.homeDirectory = "/home/hector";
