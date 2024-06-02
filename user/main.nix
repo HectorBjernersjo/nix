@@ -1,11 +1,10 @@
 { config, pkgs, ... }:
 
 {
-
 imports = [ 
     ./programs/main.nix
-    ./wms/main.nix
     ./shells/main.nix
+    ./darkmode.nix
     ];
 
 home.username = "hector";
@@ -31,4 +30,7 @@ home.homeDirectory = "/home/hector";
 
   services.gpg-agent.enable = true;
   programs.ssh.enable = true;
+
+
+
 }

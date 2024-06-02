@@ -3,3 +3,5 @@ if [ -f ~/Programs/z.sh ]; then
     . ~/Programs/z.sh
 fi
 
+export GTK_THEME=Adwaita:dark
+export QT_STYLE_OVERRIDE=Adwaita-Dark

@@ -2,17 +2,19 @@
 
 {
   environment.systemPackages = with pkgs; [
-    neovim
-    wget
     google-chrome
-    git
-    home-manager
     vscode
-    kitty
     wofi
+    kitty
+    wget
+    git
+    neovim
+    home-manager
     gcc
-    lua-language-server
     python3
     fastfetch
+    adwaita-qt
+    bibata-cursors
+    hashcat
   ];
 }
