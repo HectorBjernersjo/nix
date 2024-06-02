@@ -3,5 +3,11 @@ if [ -f ~/Programs/z.sh ]; then
     . ~/Programs/z.sh
 fi
 
-export GTK_THEME=Adwaita:dark
-export QT_STYLE_OVERRIDE=Adwaita-Dark
+# export GTK_THEME=Adwaita:dark
+# export QT_STYLE_OVERRIDE=Adwaita-Dark
+#
+#
+# export LD_LIBRARY_PATH="/run/opengl-driver/lib:$LD_LIBRARY_PATH"
+# export LIBGL_DRIVERS_PATH="/run/opengl-driver/lib/dri"
+# export ROCR_VISIBLE_DEVICES=0
+# export ROCM_PATH=/opt/rocm

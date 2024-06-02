@@ -16,5 +16,10 @@
     adwaita-qt
     bibata-cursors
     hashcat
+    insync
+    killall
+    starship
+    wl-clipboard
+    xclip
   ];
 }

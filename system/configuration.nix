@@ -6,6 +6,7 @@
 	./packages.nix
     ./drivers.nix
     ./users.nix
+    ./scripts/main.nix
 	];
 
   boot.loader.systemd-boot.enable = true;
@@ -23,8 +24,8 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  programs.hyprland.enable = false;
+  services.xserver.desktopManager.gnome.enable = false;
+  programs.hyprland.enable = true;
 
   console.keyMap = "sv-latin1";
 
@@ -59,7 +60,7 @@
   nixpkgs.config.allowUnfree = true;
 
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "unstable";
 
   # Add the logind configuration to manage sleep settings
   services.logind.extraConfig = ''
