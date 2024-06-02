@@ -21,5 +21,17 @@
     starship
     wl-clipboard
     xclip
+    qdirstat
+    spotify
+    obsidian
+    gtkd
+    feh
+    gimp
+    unzip
+    dolphin
+    sway
+    swappy
+    slurp
+    pavucontrol
   ];
 }

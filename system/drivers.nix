@@ -21,19 +21,17 @@
 #   hardware.opengl.driSupport = true;
 # # For 32 bit applications
 # hardware.opengl.driSupport32Bit = true;
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    services.xserver.videoDrivers = [ "amdgpu" ];
+    hardware.opengl = {
+        # Mesa
+        enable = true;
 
-
-boot.initrd.kernelModules = [ "amdgpu" ];
-services.xserver.videoDrivers = [ "amdgpu" ];
-hardware.opengl = {
-	# Mesa
-	enable = true;
-
-	# Vulkan
-	driSupport = true;
-};
-hardware.opengl.extraPackages = with pkgs; [
-  rocmPackages.clr.icd
-];
+        # Vulkan
+        driSupport = true;
+    };
+    hardware.opengl.extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+    ];
 }
 
