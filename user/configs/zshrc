@@ -9,6 +9,7 @@ fi
 
 export NIX_CONF_PATH="$HOME/hector-config"
 export SHELLS_PATH="$NIX_CONF_PATH/shells"
+export SCRIPTS_PATH="$NIX_CONF_PATH/system/scripts"
 
 # Define the function to run nix-shell with any input
 _enter_nix_shell() {
@@ -28,12 +29,34 @@ _run_nix_shell(){
 }
 
 
-# Create an alias that calls the function
 alias shell='_enter_nix_shell'
 alias shellrun='_run_nix_shell'
+alias dirstats="python3 $SCRIPTS_PATH/dir_stats.py"
 
 # Example of adding more functionality using the alias
 alias shell_list='ls $SHELLS_PATH'
 
-# You can add more functionality or aliases as needed
 
+# Aliases
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}

@@ -11,7 +11,6 @@
     neovim
     home-manager
     gcc
-    python3
     fastfetch
     adwaita-qt
     bibata-cursors
@@ -39,5 +38,7 @@
     starship
     waybar
     nodejs
+    swaybg
+    swayidle
   ];
 }

@@ -3,6 +3,7 @@
 {
 imports = [ 
     ./configs/main.nix
+    ./packages.nix
     # ./theme.nix
     # ./shell.nix
     ];
@@ -14,8 +15,6 @@ imports = [
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
-  ];
 
   programs.git = {
   	enable = true;

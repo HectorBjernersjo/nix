@@ -56,8 +56,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "hector";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "hector";
 
   programs.firefox.enable = true;
 
