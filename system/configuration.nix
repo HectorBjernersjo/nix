@@ -8,7 +8,7 @@
     ./drivers.nix
     ./users.nix
     ./scripts/main.nix
-    ./shell.nix
+    # ./shell.nix
 	];
 
   boot.loader.systemd-boot.enable = true;
@@ -29,6 +29,7 @@
   # services.xserver.desktopManager.gnome.enable = false;
 
   programs.hyprland.enable = true;
+  programs.zsh.enable = true;
 
   console.keyMap = "sv-latin1";
 

@@ -2,13 +2,14 @@
 
 {
 imports = [ 
-    ./programs/main.nix
-    ./shells/main.nix
-    ./darkmode.nix
+    ./configs/main.nix
+    # ./theme.nix
+    # ./shell.nix
     ];
 
-home.username = "hector";
-home.homeDirectory = "/home/hector";
+  home.username = "hector";
+  home.homeDirectory = "/home/hector";
+
   home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
@@ -25,12 +26,27 @@ home.homeDirectory = "/home/hector";
 	};
   };
 
-  # programs.zsh.enable = true;
   programs.starship.enable = true;
 
   services.gpg-agent.enable = true;
   programs.ssh.enable = true;
 
+  programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
 
+      history = {
+        size = 10000;
+        path = "${config.xdg.dataHome}/zsh/history";
+      };
 
+      # This appends a line to source your personal .zshrc file
+      initExtra = ''
+        if [ -f ~/.zshrc.local ]; then
+          source ~/.zshrc.local
+        fi
+      '';
+  };
 }

@@ -1,0 +1,39 @@
+# Load z if it's available
+if [ -f ~/Programs/z.sh ]; then
+    . ~/Programs/z.sh
+fi
+
+# Initialize Starship prompt
+# Uncomment the following line if you want to initialize Starship
+# eval "$(starship init zsh)"
+
+export NIX_CONF_PATH="$HOME/hector-config"
+export SHELLS_PATH="$NIX_CONF_PATH/shells"
+
+# Define the function to run nix-shell with any input
+_enter_nix_shell() {
+    if [ -n "$1" ]; then
+        nix-shell "$SHELLS_PATH/$1.nix"
+    else
+        echo "Usage: shell <shell_name>"
+    fi
+}
+
+_run_nix_shell(){
+    if [ -n "$1" ]; then
+        nix-shell "$SHELLS_PATH/$1.nix" --run "$2"
+    else
+        echo "Usage: shellrun <shell_name> <command>"
+    fi
+}
+
+
+# Create an alias that calls the function
+alias shell='_enter_nix_shell'
+alias shellrun='_run_nix_shell'
+
+# Example of adding more functionality using the alias
+alias shell_list='ls $SHELLS_PATH'
+
+# You can add more functionality or aliases as needed
+

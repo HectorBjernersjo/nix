@@ -33,5 +33,11 @@
     swappy
     slurp
     pavucontrol
+    discord
+    conda
+    imagemagick
+    starship
+    waybar
+    nodejs
   ];
 }

@@ -1,0 +1,5 @@
+# Load z if it's available
+if [ -f ~/Programs/z.sh ]; then
+    . ~/Programs/z.sh
+fi
+eval "$(starship init bash)"
