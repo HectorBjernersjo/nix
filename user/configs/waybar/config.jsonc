@@ -58,11 +58,16 @@
     },
 
     // "clock": {
+    //     "format": "{:%I:%M %p  %a, %b %e}",
+    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    // },
+
+    // "clock": {
     //     "format": "{: %I:%M %p   %a, %b %e}",
     //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     // },
     "clock": {
-        "format": "{:  %H:%M}",
+        "format": "{:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 

@@ -33,5 +33,11 @@
     hardware.opengl.extraPackages = with pkgs; [
       rocmPackages.clr.icd
     ];
+    hardware.firmware = [ pkgs.firmwareLinuxNonfree ];
+
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+    # boot.kernelModules = [ "brcmsmac" "b43" "bcma" "wl" ];
+
 }
 
