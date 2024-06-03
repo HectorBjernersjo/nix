@@ -40,5 +40,6 @@
     nodejs
     swaybg
     swayidle
+    cmatrix
   ];
 }
