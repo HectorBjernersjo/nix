@@ -46,6 +46,7 @@
     zip
     wlsunset
     pciutils
+    lshw
 
     gtk3
     gtk4
