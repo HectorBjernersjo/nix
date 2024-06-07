@@ -6,6 +6,8 @@ fi
 # Initialize Starship prompt
 # Uncomment the following line if you want to initialize Starship
 # eval "$(starship init zsh)"
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 export NIX_CONF_PATH="$HOME/hector-config"
 export SHELLS_PATH="$NIX_CONF_PATH/shells"
@@ -14,7 +16,7 @@ export SCRIPTS_PATH="$NIX_CONF_PATH/system/scripts"
 # Define the function to run nix-shell with any input
 _enter_nix_shell() {
     if [ -n "$1" ]; then
-        nix-shell "$SHELLS_PATH/$1.nix"
+        nix-shell "$SHELLS_PATH/$1.nix" --run zsh
     else
         echo "Usage: shell <shell_name>"
     fi
@@ -28,10 +30,37 @@ _run_nix_shell(){
     fi
 }
 
+_venv() {
+    if [ "$1" = "create" ]; then
+        if [ -z "$3" ]; then
+            echo "Error: Please provide a Python version when creating a venv."
+            echo "Usage: venv create <venv_name> <python_version>"
+            return 1
+        fi
+        nix-shell "$SHELLS_PATH/$3.nix" --run "python3 -m venv /home/hector/venvs/$2"
+    elif [ "$1" = "activate" ]; then
+        if [ -z "$2" ]; then
+            echo "Error: Please specify a venv name to activate."
+            echo "Usage: venv activate <venv_name>"
+            return 1
+        fi
+        source "/home/hector/venvs/$2/bin/activate"
+    elif [ "$1" = "deactivate" ]; then
+        deactivate
+    else
+        echo "Usage: venv <create|activate|deactivate> <venv_name> [python_version]"
+        return 1
+    fi
+}
+
 
 alias shell='_enter_nix_shell'
 alias shellrun='_run_nix_shell'
+alias venv='_venv'
 alias dirstats="python3 $SCRIPTS_PATH/dir_stats.py"
+
+alias night="nohup wlsunset -t 2000 -T 3000 &>/dev/null & nohup swaybg -c '#000000' &>/dev/null &"
+alias day="killall wlsunset && nohup swaybg -i '$HOME/.config/hypr/wallpaper.jpeg' &>/dev/null &"
 
 # Example of adding more functionality using the alias
 alias shell_list='ls $SHELLS_PATH'

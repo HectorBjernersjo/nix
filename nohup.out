@@ -1,0 +1,14 @@
+registry: adding output 52
+registry: adding output 53
+gamma control of output HDMI-A-1 (53) failed
+gamma control of output DP-1 (52) failed
+calculated sun trajectory: midnight sun
+setting temperature to 3000 K
+gamma control of output HDMI-A-1 (53) failed
+gamma control of output DP-1 (52) failed
+2024-06-03 23:02:25 - [main.c:282] Found config * for output DP-1 (Dell Inc. DELL 1901FP 6Y1963BJABQB)
+2024-06-03 23:02:25 - [main.c:282] Found config * for output HDMI-A-1 (ViewSonic Corporation VA2719-2K UZJ174900141)
+2024-06-03 23:09:04 - [main.c:282] Found config * for output DP-1 (Dell Inc. DELL 1901FP 6Y1963BJABQB)
+2024-06-03 23:09:04 - [main.c:282] Found config * for output HDMI-A-1 (ViewSonic Corporation VA2719-2K UZJ174900141)
+2024-06-04 10:19:46 - [main.c:226] Destroying output HDMI-A-1 (ViewSonic Corporation VA2719-2K UZJ174900141)
+2024-06-04 10:19:47 - [main.c:282] Found config * for output HDMI-A-1 (ViewSonic Corporation VA2719-2K UZJ174900141)

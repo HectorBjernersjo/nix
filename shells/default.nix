@@ -4,6 +4,6 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.python3
     pkgs.python3Packages.requests
-    pkgs.humanize
+    pkgs.python3Packages.humanize
   ];
 }

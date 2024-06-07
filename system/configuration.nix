@@ -5,7 +5,7 @@
   	./hardware-configuration.nix
 	./packages.nix
 	./fonts.nix
-    ./drivers.nix
+    # ./drivers.nix
     ./users.nix
     ./scripts/main.nix
     # ./shell.nix
@@ -14,11 +14,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Stockholm";
 

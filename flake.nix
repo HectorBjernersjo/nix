@@ -15,10 +15,18 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      taurus = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./system/configuration.nix
+          ./hosts/taurus/configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
+        specialArgs = { inherit home-manager; };
+      };
+      mac = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/mac/configuration.nix
           home-manager.nixosModules.home-manager
         ];
         specialArgs = { inherit home-manager; };

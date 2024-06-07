@@ -23,7 +23,6 @@
     qdirstat
     spotify
     obsidian
-    gtkd
     feh
     gimp
     unzip
@@ -42,7 +41,15 @@
     swayidle
     cmatrix
     kdiskmark
+    p7zip
+    gnutar
+    zip
+    wlsunset
+    pciutils
 
+    gtk3
+    gtk4
+    libadwaita
     firmwareLinuxNonfree
   ];
 }
